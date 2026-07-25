@@ -33,12 +33,18 @@ def quitar_parcela():
 
 def cadastroc():
 
-    nome = input("Digite o nome completo do cliente: ").upper()
-    telefone = input("Digite o telefone do cliente: ").upper()
-    produto = input("Digite o produto: ").upper()
-    quantidade = int(input("Digite a quantidade: "))
-    parcela = int(input("Digite o número de parcelas: "))
-    preco = float(input("Digite o preço: "))
+    while True:
+
+        telefone = input("Digite o telefone do cliente: ").upper()
+        if len(telefone) == 11 and telefone.isdigit():
+            break
+        print("O telefone deve conter exatamente 11 números.")
+
+        nome = input("Digite o nome do cliente: ").upper()
+        produto = input("Digite o produto: ").upper()
+        quantidade = int(input("Digite a quantidade do produto: "))
+        parcela = int(input("Digite o número de parcelas: "))
+        preco = float(input("Digite o preço do produto: "))
 
     cursor.execute("INSERT INTO usuarios (nome, telefone, produto, quantidade, parcela, preco) VALUES (?, ?, ?, ?, ?, ?)", (nome, telefone, produto, quantidade, parcela, preco))
     conexion.commit()
@@ -52,7 +58,7 @@ def encontrar_telefone():
         ID: {usuario[0]},
         Nome: {usuario[1]}, 
         Produto: {usuario[2]}, 
-        telefone: {usuario[3]},
+        Telefone: {usuario[3]},
         Quantidade: {usuario[4]}, 
         Parcelas: {usuario[5]}, 
         Preço: {usuario[6]}""")
