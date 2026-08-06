@@ -1,4 +1,7 @@
 import sqlite3
-from clientes import clientes
-from produtos import produtos
-from flask import Flask
+from clientes import USERS
+from flask import Flask, render_template, url_for
+from database import criar_tabelas
+from produtos import Products
+
+
