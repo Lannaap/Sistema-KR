@@ -1,6 +1,6 @@
 import sqlite3
 
-class Products:
+class Products: 
 
     def __init__(self):
         self.conexao = sqlite3.connect("dados.db")
