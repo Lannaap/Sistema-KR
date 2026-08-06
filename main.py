@@ -11,7 +11,7 @@ cliente = USERS()
 
 print ("Bem vindo ao sistema KR")
 print("O que deseja fazer")
-print("Configuração de produtos [1]\n  Configutação de clientes[2]")
+print("Configuração de produtos [1]\nConfigutação de clientes[2]")
 
 escolha = input("Digite a escolha: ")
 
